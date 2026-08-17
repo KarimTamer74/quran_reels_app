@@ -159,20 +159,21 @@ Final 9:16 MP4 Video
 
 | Category | Technology |
 |---|---|
-| **Framework** | Flutter / Dart |
-| **Architecture** | MVVM-oriented / Feature-based |
-| **State Management** | `flutter_bloc` / Cubit |
-| **Dependency Injection** | `get_it` |
-| **Video Processing** | `ffmpeg_kit_flutter_new` |
-| **Audio Playback** | `just_audio` |
-| **Video Playback** | `video_player` |
-| **Quran Data** | AlQuran Cloud API / Hive |
-| **Quran Audio** | EveryAyah |
-| **Networking** | Dio / HTTP |
-| **Localization** | `easy_localization` |
-| **Responsive UI** | `flutter_screenutil` |
-| **Local Storage** | Hive / SharedPreferences |
-| **Gallery & Sharing** | `gal` / `share_plus` |
+| **Framework** | <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"> <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" alt="Dart"> |
+| **Architecture** | <img src="https://img.shields.io/badge/MVVM-1D9E75?style=flat-square" alt="MVVM"> <img src="https://img.shields.io/badge/Feature--Based-1D9E75?style=flat-square" alt="Feature Based Architecture"> |
+| **State Management** | <img src="https://img.shields.io/badge/BLoC-6C63FF?style=flat-square" alt="BLoC"> <img src="https://img.shields.io/badge/Cubit-6C63FF?style=flat-square" alt="Cubit"> |
+| **Dependency Injection** | <img src="https://img.shields.io/badge/GetIt-1D9E75?style=flat-square" alt="GetIt"> |
+| **Video Processing** | <img src="https://img.shields.io/badge/FFmpeg-007808?style=flat-square&logo=ffmpeg&logoColor=white" alt="FFmpeg"> |
+| **Audio Playback** | <img src="https://img.shields.io/badge/just__audio-0175C2?style=flat-square&logo=dart&logoColor=white" alt="just_audio"> |
+| **Video Playback** | <img src="https://img.shields.io/badge/Video_Player-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Video Player"> |
+| **Quran Data** | <img src="https://img.shields.io/badge/AlQuran_Cloud-1D9E75?style=flat-square" alt="AlQuran Cloud"> <img src="https://img.shields.io/badge/Hive-FFC107?style=flat-square&logo=hive&logoColor=black" alt="Hive"> |
+| **Quran Audio** | <img src="https://img.shields.io/badge/EveryAyah-1D9E75?style=flat-square" alt="EveryAyah"> |
+| **Networking** | <img src="https://img.shields.io/badge/Dio-0175C2?style=flat-square&logo=dart&logoColor=white" alt="Dio"> <img src="https://img.shields.io/badge/HTTP-0175C2?style=flat-square&logo=dart&logoColor=white" alt="HTTP"> |
+| **Localization** | <img src="https://img.shields.io/badge/Easy_Localization-1D9E75?style=flat-square" alt="Easy Localization"> |
+| **Responsive UI** | <img src="https://img.shields.io/badge/ScreenUtil-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter ScreenUtil"> |
+| **Local Storage** | <img src="https://img.shields.io/badge/Hive-FFC107?style=flat-square&logo=hive&logoColor=black" alt="Hive"> <img src="https://img.shields.io/badge/Shared_Preferences-4285F4?style=flat-square&logo=android&logoColor=white" alt="Shared Preferences"> |
+| **Gallery & Sharing** | <img src="https://img.shields.io/badge/Gal-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Gal"> <img src="https://img.shields.io/badge/Share_Plus-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Share Plus"> |
+---
 
 ## ⚙️ Engineering Highlights
 
