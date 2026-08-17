@@ -124,7 +124,7 @@ lib/
     │   └── presentation/
     │       ├── cubits/      # VideoGenerationCubit, PreviewCubit, AudioCubit
     │       ├── controllers/ # VideoResultController
-    │       ├── screens/     # 7 screens
+    │       ├── screens/     
     │       └── widgets/     # Extracted, reusable widgets
     ├── onboarding/
     └── settings/
@@ -136,46 +136,43 @@ lib/
 
 ## 🎬 Video Generation Pipeline
 
-All processing happens on-device using `ffmpeg_kit_flutter`.
+QuranReels uses **FFmpeg** to process the selected recitations, Quran text, and visual template into a vertical MP4 video.
 
+```text
+Selected Ayahs
+      ↓
+Download Recitation Audio
+      ↓
+Process & Combine Audio
+      ↓
+Prepare Quran Text & Metadata
+      ↓
+Compose Background + Text + Audio
+      ↓
+FFmpeg
+      ↓
+Final 9:16 MP4 Video
 ```
-Download Ayah audio files  →  Extract per-file duration (ffprobe)
-         ↓
-Merge audio (concat)  →  Dart-side Arabic word wrap
-         ↓
-Compose: gradient background + timed subtitle filters + metadata overlay
-         ↓
-Export MP4  (720×1280 · H.264 · AAC · faststart)
-```
-
-**Key engineering decisions:**
-- **720p output** — 2× faster than 1080p with no visible quality loss on mobile
-- **Dart-side word wrap** — avoids FFmpeg multiline limitations for Arabic text
-- **`enable='between(t,start,end)'`** — each Ayah subtitle synced to exact audio duration
-- **Shadow rendering** — cleaner text on any background, no border artifacts
-- **`superfast` preset + CRF 28** — optimal speed/quality balance on mobile hardware
-
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-| Category | Package |
+| Category | Technology |
 |---|---|
-| Framework | Flutter 3.x, Dart 3.x |
-| State Management | `flutter_bloc` (Cubit) |
-| Dependency Injection | `get_it` |
-| Video Processing | `ffmpeg_kit_flutter_new` |
-| Audio Playback | `just_audio` |
-| Video Playback | `video_player` |
-| Quran Data | AlQuran Cloud API + Hive cache |
-| Quran Audio | EveryAyah.com |
-| Localization | `easy_localization` |
-| Responsive UI | `flutter_screenutil` |
-| Gallery / Share | `gal`, `share_plus` |
-| Networking | `http`, `dio` |
-| Local Storage | `hive`, `shared_preferences` |
-
----
+| **Framework** | Flutter / Dart |
+| **Architecture** | MVVM-oriented / Feature-based |
+| **State Management** | `flutter_bloc` / Cubit |
+| **Dependency Injection** | `get_it` |
+| **Video Processing** | `ffmpeg_kit_flutter_new` |
+| **Audio Playback** | `just_audio` |
+| **Video Playback** | `video_player` |
+| **Quran Data** | AlQuran Cloud API / Hive |
+| **Quran Audio** | EveryAyah |
+| **Networking** | Dio / HTTP |
+| **Localization** | `easy_localization` |
+| **Responsive UI** | `flutter_screenutil` |
+| **Local Storage** | Hive / SharedPreferences |
+| **Gallery & Sharing** | `gal` / `share_plus` |
 
 ## ⚙️ Engineering Highlights
 
@@ -219,18 +216,30 @@ Export MP4  (720×1280 · H.264 · AAC · faststart)
 
 ### ✅ Implemented
 
+<table>
+<tr>
+<td width="33%">
+
 - [x] Surah selection
 - [x] Ayah range selection
 - [x] Reciter selection
 - [x] Reciter audio preview
 - [x] Suggested templates
 - [x] My Templates
+
+</td>
+<td width="33%">
+
 - [x] Template selection
 - [x] Template rename / delete
 - [x] Preview screen
 - [x] Video generation screen
 - [x] Video result screen
 - [x] Video playback
+
+</td>
+<td width="33%">
+
 - [x] Save to gallery
 - [x] Share generated video
 - [x] Arabic / English localization
@@ -238,39 +247,62 @@ Export MP4  (720×1280 · H.264 · AAC · faststart)
 - [x] Responsive UI
 - [x] FFmpeg generation foundation
 
+</td>
+</tr>
+</table>
+
 ### 🚧 In Progress
+
+<table>
+<tr>
+<td width="33%">
 
 - [ ] Finalize FFmpeg generation pipeline
 - [ ] Accurate Ayah / audio synchronization
 - [ ] Improve Arabic text wrapping
+
+</td>
+<td width="33%">
+
 - [ ] Optimize generation speed & memory usage
 - [ ] Improve generated video quality
 - [ ] Finalize custom template persistence
+
+</td>
+<td width="33%">
+
 - [ ] Production testing across Android devices
 
+</td>
+</tr>
+</table>
+
 ### 🔮 Planned
+
+<table>
+<tr>
+<td width="33%">
 
 - [ ] More Quran templates
 - [ ] More reciters
 - [ ] Custom backgrounds
+
+</td>
+<td width="33%">
+
 - [ ] Text animation styles
 - [ ] Multiple video resolutions
 - [ ] Generation history
+
+</td>
+<td width="33%">
+
 - [ ] Favorites / saved projects
 - [ ] Google Play release
 
----
-
-## 🚀 Getting Started
-
-```bash
-git clone https://github.com/KarimTamer74/quran_reels.git
-cd quran_reels
-flutter pub get
-flutter run
-```
-
-> Requires Android SDK 21+ · FFmpeg Kit is bundled — no additional setup needed.
+</td>
+</tr>
+</table>
 
 ---
 
