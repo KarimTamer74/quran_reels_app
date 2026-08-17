@@ -1,358 +1,379 @@
-🎬 AyahFlow
+<div align="center">
 
-<p align="center">
-  <img src="docs/screenshots/ayahflow_app_icon.png" width="120" alt="AyahFlow App Icon">
+🎬 QuranReels
+
+Create beautiful, shareable Quran Reels — directly from your selected Ayahs.
+
+<p>
+  <img src="docs/screenshots/app_icon.png" width="110" alt="QuranReels App Icon">
 </p>
 
-<h3 align="center">
-  A modern Flutter application for creating cinematic Quran Reels from selected verses.
-</h3>
-
-<p align="center">
-  Flutter • Dart • BLoC/Cubit • MVVM • FFmpeg • REST APIs • Easy Localization
+<p>
+  <img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white">
+  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white">
+  <img src="https://img.shields.io/badge/State-Cubit%20%2F%20BLoC-6C63FF?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Architecture-MVVM-1DB954?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Video-FFmpeg-000000?style=for-the-badge&logo=ffmpeg&logoColor=white">
 </p>
 
-<p align="center">
-  <a href="#-screenshots">📸 Screenshots</a>
-  &nbsp; • &nbsp;
-  <a href="#-features">✨ Features</a>
-  &nbsp; • &nbsp;
-  <a href="#-video-generation-pipeline">🎥 Video Generation</a>
-  &nbsp; • &nbsp;
-  <a href="#-architecture">🏗 Architecture</a>
+<p>
+  <img src="https://img.shields.io/badge/Localization-AR%20%2B%20EN-1DB954?style=flat-square">
+  <img src="https://img.shields.io/badge/Theme-Light%20%2B%20Dark-1DB954?style=flat-square">
+  <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square">
 </p>
 
-📱 About
+<p>
+  <a href="#-overview">Overview</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-how-it-works">How It Works</a> •
+  <a href="#-video-generation">Video Generation</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-screenshots">Screenshots</a>
+</p>
 
-AyahFlow is a Flutter-based Quran Reel generator designed to turn selected Quran verses into short, vertical videos suitable for sharing on social media.
+</div>
 
-The user can select a Surah, choose an ayah range, select a reciter, choose a visual template/background, preview the configuration, and generate a final video containing the Quran text, reciter information, visual background, and recitation audio.
+🌙 Overview
 
-The project focuses on:
+QuranReels is a Flutter application built to turn selected Quran verses into beautiful 9:16 vertical videos ready to preview, save, and share.
 
-Clean and maintainable Flutter architecture
+Instead of manually editing a Quran video, the user simply chooses:
 
-Reusable UI components
+Surah → Ayah Range → Reciter → Template → Preview → Generate → Share
 
-Reactive state management with Cubit
+The project combines Quran data, online recitations, customizable visual templates, and local FFmpeg processing into one creation flow.
 
-MVVM-oriented feature organization
-
-Arabic-first Quran presentation
-
-Light / Dark themes
-
-Arabic / English localization
-
-Responsive UI
-
-Local video generation with FFmpeg
-
-Performance-conscious video processing
-
-🚧 Status: In Development / Portfolio Project
-
-The application is not currently presented as a production-ready Google Play release.
+🚧 Project Status: In Development / Portfolio ProjectThe main application flow and UI are implemented. The FFmpeg generation pipeline is still being refined for synchronization, performance, and production reliability.
 
 ✨ Features
 
-📖 Surah Selection
-
-Users can browse the Quran and select the Surah they want to use in their Reel.
-
-Quran data integration
-
-Surah name in Arabic and English
-
-Surah number
-
-Search/filter-friendly selection UI
-
-Responsive Surah cards
-
-🔢 Ayah Range Selection
-
-After selecting a Surah, users can select the exact range of verses they want to include.
-
-Example:
-
-Al-Baqarah
-Ayahs 1 → 5
-
-The selected range is carried through the creation flow until the final generation stage.
-
-🎙 Reciter Selection
-
-Users can choose from a curated list of Quran reciters.
-
-Each reciter contains information such as:
-
-Reciter name
-
-EveryAyah audio folder
-
-Reciter image
-
-Audio preview support
-
-Audio is retrieved dynamically rather than bundling every Quran recording inside the application.
-
-The project uses EveryAyah audio URLs for individual ayahs.
-
-🎨 Template System
-
-AyahFlow provides visual templates/backgrounds for Quran Reels.
-
-Users can:
-
-Browse suggested templates
-
-Filter templates
-
-Select a template
-
-Browse personal templates
-
-Add custom templates
-
-Rename personal templates
-
-Delete personal templates
-
-The template system is designed to be reusable and extensible.
-
-👤 My Templates
-
-Users can manage their own visual templates separately from the built-in suggested templates.
-
-The UI separates:
-
-Suggested Templates
-        ↓
-My Templates
-
-This keeps the template browsing experience clean and scalable.
-
-👁 Preview
-
-Before generating the final video, the application presents a preview configuration containing:
-
-Surah
-
-Selected ayah range
-
-Reciter
-
-Template/background
-
-Reciter information
-
-The selected data is passed through the creation flow using a dedicated preview arguments model rather than relying on unrelated UI state.
-
-🎥 Video Generation Pipeline
-
-The main technical feature of AyahFlow is its Quran video generation pipeline.
-
-The generation process is designed around FFmpeg.
-
-Pipeline
-
-Surah
-   │
-   ▼
-Ayah Range
-   │
-   ▼
-Reciter
-   │
-   ▼
-EveryAyah Audio URLs
-   │
-   ▼
-Download Ayah Audio
-   │
-   ▼
-Merge Audio
-   │
-   ▼
-Background / Template
-   │
-   ▼
-Quran Text + Metadata
-   │
-   ▼
-FFmpeg
-   │
-   ▼
-MP4 Video
-
-Audio
-
-Individual ayah audio files are generated from EveryAyah URLs:
-
-https://everyayah.com/data/{reciter_folder}/{surah}{ayah}.mp3
-
-The application downloads the required ayah recordings and combines them into a single audio track.
-
-Video
-
-FFmpeg is responsible for:
-
-Loading the background
-
-Loading the merged audio
-
-Rendering Quran text
-
-Rendering Surah information
-
-Rendering reciter information
-
-Creating the final vertical video
-
-Encoding the result as MP4
-
-The intended output format is optimized for social-media-style vertical video:
-
-1080 × 1920
-9:16
-MP4
-
-⚠️ The video generation pipeline is currently under active development and optimization.
-
-🧭 User Flow
-
-┌─────────────────────┐
-│   Select Surah      │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Select Ayah Range   │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Select Reciter      │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Select Template     │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│       Preview       │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Generate Video      │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│  Video Result       │
-│                     │
-│ Play • Save • Share │
-└─────────────────────┘
-
-📸 Screenshots
-
-Add screenshots to docs/screenshots/ and update the filenames below.
+<table>
+<tr>
+<td width="50%">
 
 📖 Quran Selection
 
-Surah Selection
+Browse Quran Surahs
 
-Ayah Range
+Arabic & English names
 
-<img src="docs/screenshots/surah_selection.png" width="250">
+Surah number
 
-<img src="docs/screenshots/ayah_range.png" width="250">
+Responsive selection UI
+
+Quran text integration
+
+</td>
+<td width="50%">
+
+🔢 Ayah Range
+
+Select starting Ayah
+
+Select ending Ayah
+
+Preview the selected range
+
+Carry the selection through the creation flow
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+🎙 Reciters
+
+Curated reciter list
+
+Reciter images
+
+EveryAyah audio integration
+
+Play Basmala / Ayah previews
+
+Dynamic audio URLs
+
+</td>
+<td>
+
+🎨 Templates
+
+Suggested templates
+
+Template categories / filters
+
+My Templates
+
+Custom template support
+
+Rename templates
+
+Delete templates
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+👁 Preview
+
+Review the complete configuration before generation:
+
+Surah
+
+Ayah range
+
+Reciter
+
+Template
+
+Background
+
+Reciter information
+
+</td>
+<td>
+
+🎥 Video Result
+
+After generation:
+
+Play / pause
+
+Scrub through the video
+
+Save to gallery
+
+Share the generated MP4
+
+View duration & file size
+
+</td>
+</tr>
+</table>
+
+🧭 How It Works
+
+┌──────────────────┐
+│   1. Select      │
+│      Surah       │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│   2. Select      │
+│    Ayah Range    │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│   3. Select      │
+│     Reciter      │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│   4. Select      │
+│     Template     │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│   5. Preview     │
+│  Complete Setup  │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│   6. Generate    │
+│     Video        │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│   7. Video       │
+│      Result      │
+│ Play • Save •    │
+│      Share       │
+└──────────────────┘
+
+🎥 Video Generation
+
+Video generation is the core technical part of QuranReels.
+
+The application uses FFmpeg to compose the final Reel locally.
+
+Generation Pipeline
+
+Selected Ayahs
+      │
+      ▼
+EveryAyah Audio URLs
+      │
+      ▼
+Download Required Audio
+      │
+      ▼
+Merge Ayah Audio
+      │
+      ├───────────────┐
+      ▼               ▼
+Template /        Quran Text
+Background        + Metadata
+      │               │
+      └───────┬───────┘
+              ▼
+           FFmpeg
+              │
+              ▼
+       Vertical MP4
+        1080 × 1920
+           9:16
+
+🔊 Audio
+
+Only the required recitation files are requested instead of bundling the entire Quran audio library inside the application.
+
+EveryAyah URLs follow the project structure:
+
+https://everyayah.com/data/{reciter_folder}/{surah}{ayah}.mp3
+
+The selected Ayah recordings are downloaded and combined into the video's audio track.
+
+🎞 FFmpeg
+
+FFmpeg handles:
+
+Background / template processing
+
+Audio input
+
+Quran text rendering
+
+Surah information
+
+Reciter information
+
+Video composition
+
+MP4 encoding
+
+9:16 vertical output
+
+Output
+
+Format      MP4
+Resolution  1080 × 1920
+Aspect      9:16
+Use Case    Social / Short-form Video
+
+⚠️ Current focus: accurate Ayah/audio synchronization, Arabic text rendering, generation performance, and production stability.
+
+🖼️ Screenshots
+
+📖 Quran Selection
+
+<div align="center">
+  <img src="docs/screenshots/surah_selection.png" width="250">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/ayah_range.png" width="250">
+</div>
+
+<p align="center">
+  <b>Surah Selection</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Ayah Range</b>
+</p>
 
 🎙 Reciter Selection
 
-<p align="center">
+<div align="center">
   <img src="docs/screenshots/reciter_selection.png" width="250">
+  &nbsp;&nbsp;&nbsp;
   <img src="docs/screenshots/reciter_audio_preview.png" width="250">
+</div>
+
+<p align="center">
+  Choose a reciter and preview the recitation before continuing.
 </p>
 
 🎨 Templates
 
-Suggested Templates
+<div align="center">
+  <img src="docs/screenshots/suggested_templates.png" width="250">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/my_templates.png" width="250">
+</div>
 
-My Templates
-
-<img src="docs/screenshots/suggested_templates.png" width="250">
-
-<img src="docs/screenshots/my_templates.png" width="250">
+<p align="center">
+  <b>Suggested Templates</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>My Templates</b>
+</p>
 
 👁 Preview
 
+<div align="center">
+  <img src="docs/screenshots/preview.png" width="280">
+</div>
+
 <p align="center">
-  <img src="docs/screenshots/preview.png" width="250">
+  Review the selected Surah, Ayah range, Reciter and Template before generation.
 </p>
 
-🎥 Video Generation
+⚙️ Generation
+
+<div align="center">
+  <img src="docs/screenshots/video_generation.png" width="280">
+</div>
 
 <p align="center">
-  <img src="docs/screenshots/video_generation.png" width="250">
+  Progress feedback while the video is being generated.
 </p>
 
-📱 Generated Video
+📱 Final Result
+
+<div align="center">
+  <img src="docs/screenshots/video_result.png" width="280">
+</div>
 
 <p align="center">
-  <img src="docs/screenshots/video_result.png" width="250">
+  Preview, save, and share the generated Quran Reel.
 </p>
 
 🏗 Architecture
 
-AyahFlow follows a feature-based Flutter architecture with MVVM-oriented separation and Cubit/BLoC state management.
+QuranReels follows a feature-based architecture with an MVVM-oriented structure and Cubit/BLoC state management.
 
-The main goal is to keep:
+The goal is to keep UI, state, business logic, services, and data models separated and maintainable.
 
-UI responsibilities
-
-State management
-
-Business logic
-
-Services
-
-Data models
-
-separated from each other.
-
-High-Level Architecture
-
-┌────────────────────────────────────┐
-│            Presentation            │
-│                                    │
-│ Screens • Widgets • Cubits • UI    │
-└──────────────────┬─────────────────┘
-                   │
-                   ▼
-┌────────────────────────────────────┐
-│             ViewModel              │
-│                                    │
-│ Cubit / State + UI orchestration   │
-└──────────────────┬─────────────────┘
-                   │
-                   ▼
-┌────────────────────────────────────┐
-│              Services              │
-│                                    │
-│ Audio • Video • Local Storage      │
-└──────────────────┬─────────────────┘
-                   │
-                   ▼
-┌────────────────────────────────────┐
-│               Data                 │
-│                                    │
-│ Models • APIs • External Sources   │
-└────────────────────────────────────┘
+                    ┌──────────────────────┐
+                    │     Presentation     │
+                    │ Screens • Widgets    │
+                    │       • Cubits       │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │       ViewModel      │
+                    │   Cubit / States     │
+                    │ UI Flow Orchestration│
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │       Services       │
+                    │ Audio • Video •      │
+                    │ Local Storage        │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │         Data         │
+                    │ Models • APIs •      │
+                    │ External Sources     │
+                    └──────────────────────┘
 
 📂 Project Structure
 
-The project is organized by feature and shared core infrastructure.
-
 lib/
+│
 ├── core/
 │   ├── constants/
 │   ├── extensions/
@@ -367,109 +388,127 @@ lib/
 │
 ├── features/
 │   ├── onboarding/
-│   ├── quran_generator/
-│   │   ├── data/
-│   │   │   └── models/
-│   │   └── presentation/
-│   │       ├── cubits/
-│   │       ├── screens/
-│   │       └── widgets/
 │   │
-│   └── ...
+│   └── quran_generator/
+│       ├── data/
+│       │   └── models/
+│       │
+│       └── presentation/
+│           ├── cubits/
+│           ├── screens/
+│           └── widgets/
 │
 └── main.dart
 
-The core layer contains reusable application infrastructure, while feature-specific UI and state live under features.
+Why this structure?
+
+Core → reusable application infrastructure
+
+Features → isolated business features
+
+Screens → page-level UI
+
+Widgets → reusable UI components
+
+Cubits → state & flow management
+
+Models → structured application data
+
+Services → external / media operations
 
 🧠 State Management
 
-The application uses flutter_bloc / Cubit for predictable state management.
+The project uses flutter_bloc / Cubit for predictable and reactive state management.
 
-Examples include:
+Key Cubits include:
 
 TemplateCubit
 PreviewCubit
 VideoGenerationCubit
 
-The video generation flow exposes states such as:
+The generation flow is represented through explicit states:
 
 Initial
-   ↓
+   │
+   ▼
 Loading
-   ↓
+   │
+   ▼
 Generating
-   ↓
+   │
+   ├──────────────► Failure
+   │
+   ▼
 Ready
-   ↓
+   │
+   ▼
 Done
 
-or:
-
-Initial
-   ↓
-Loading
-   ↓
-Failure
-
-The UI reacts to state changes instead of directly controlling business logic.
+This keeps business logic out of UI widgets and allows the UI to react to state changes.
 
 ⚡ Performance
 
-Video generation can be computationally expensive, so the project is designed with performance in mind.
+Media generation can be expensive, so the project is built with performance in mind.
 
-Implemented / considered optimizations include:
+Current techniques
 
-FFmpeg-based processing
+⚙️ FFmpeg-based media processing
 
-Avoiding unnecessary widget rebuilds
+🧩 Reusable widgets
 
-const widgets where possible
+🧱 const widgets where applicable
 
-RepaintBoundary around expensive template cards
+🎨 RepaintBoundary around expensive template cards
 
-Reusable widgets
+🔊 Load only required audio
 
-Lazy loading of audio files
+💾 Temporary file storage for generated media
 
-Temporary file storage for generated media
+📊 Generation progress feedback
 
-Progress feedback during generation
-
-Separation of video generation from UI rendering
+🧠 Separation of video processing from UI rendering
 
 🌍 Localization
 
-The application supports multiple languages using Easy Localization.
+QuranReels supports:
 
-Current target languages:
+Language
+
+Direction
 
 🇬🇧 English
 
+LTR
+
 🇪🇬 Arabic
 
-The UI is designed with RTL support in mind for Arabic.
+RTL
 
-All user-facing text is intended to be localization-ready instead of being hardcoded inside widgets.
+Localization is implemented using Easy Localization, with the UI designed to support Arabic RTL layouts.
 
-🎨 Theming
+User-facing strings are kept localization-ready rather than being tightly coupled to individual widgets.
 
-AyahFlow supports:
+🎨 Design System
 
-🌙 Dark Mode
+QuranReels supports both:
 
 ☀️ Light Mode
 
-The design system uses a centralized color and typography system to maintain consistency across screens.
+Clean surfaces, readable typography, and the brand green accent.
 
-The primary brand color is based around:
+🌙 Dark Mode
+
+Dark cinematic surfaces designed to complement Quran video content.
+
+Brand Accent
 
 Color(0xFF1DB954)
 
-The UI uses the green accent together with dark cinematic surfaces to create a modern Quran-focused visual identity.
+The design combines the green brand accent with dark visual surfaces to create a modern Quran-focused identity.
 
 🛠 Tech Stack
 
-Category
+Layer
 
 Technology
 
@@ -501,13 +540,13 @@ Networking
 
 Dio / HTTP
 
+Quran Text
+
+AlQuran Cloud API
+
 Quran Audio
 
 EveryAyah
-
-Quran Data
-
-AlQuran Cloud API
 
 Localization
 
@@ -539,33 +578,27 @@ GetIt
 
 UI
 
-Material + Custom Reusable Widgets
+Material + Custom Widgets
 
-🔌 External Data Sources
+🔌 External Sources
 
-Quran Text
+📖 Quran Text
 
-Quran text is retrieved using:
-
-AlQuran Cloud API
-
-Example endpoint used by the project:
+The project uses the AlQuran Cloud API for Quran data.
 
 https://api.alquran.cloud/v1/quran/quran-uthmani
 
-Quran Audio
+🎙 Quran Recitations
 
-Individual recitations are retrieved from:
+Recitations are retrieved from EveryAyah.
 
-EveryAyah
+This approach allows the application to request only the selected Ayahs instead of shipping the complete audio library with the APK.
 
-This allows the application to request only the selected ayahs instead of bundling the complete audio library into the APK.
+💡 Engineering Highlights
 
-🎯 Engineering Highlights
+Flutter
 
-Flutter Architecture
-
-Feature-based project organization
+Feature-based architecture
 
 MVVM-oriented separation
 
@@ -577,13 +610,15 @@ Centralized theme system
 
 Centralized typography
 
-Localization-ready UI
+Responsive UI
+
+Arabic RTL support
 
 Media Processing
 
-Dynamic Quran audio URL generation
+Dynamic Ayah audio URL generation
 
-Individual ayah audio downloads
+Individual audio downloads
 
 Audio concatenation
 
@@ -591,21 +626,21 @@ FFmpeg video composition
 
 Arabic text rendering
 
-Vertical 9:16 video generation
+9:16 vertical video generation
 
-Temporary media file management
+Temporary media file handling
 
-UX
+User Experience
 
-Step-by-step Quran Reel creation flow
+Guided creation flow
 
-Loading and generation progress
+Audio preview
 
-Audio preview before generation
+Template browsing
 
-Template selection
+Custom template management
 
-Personal template management
+Generation progress
 
 Video preview
 
@@ -613,9 +648,13 @@ Save to gallery
 
 Share generated video
 
-🗺 Roadmap
+Light / Dark mode
 
-Completed / Implemented
+Arabic / English localization
+
+🗺️ Roadmap
+
+✅ Implemented
 
 Surah selection
 
@@ -631,15 +670,17 @@ My Templates
 
 Template selection
 
-Template rename/delete flow
+Template rename / delete
 
 Preview screen
+
+Video generation screen
 
 Video result screen
 
 Video playback
 
-Save video to gallery
+Save to gallery
 
 Share generated video
 
@@ -649,17 +690,17 @@ Light / Dark theme
 
 Responsive UI
 
-FFmpeg-based generation pipeline
+FFmpeg generation foundation
 
 🚧 In Progress
 
 Finalize FFmpeg generation pipeline
 
-Accurate per-ayah audio/text synchronization
+Accurate Ayah / audio synchronization
 
-Improve Quran text rendering and wrapping
+Improve Arabic text wrapping
 
-Optimize generation speed and memory usage
+Optimize generation speed & memory usage
 
 Improve generated video quality
 
@@ -673,9 +714,9 @@ More Quran templates
 
 More reciters
 
-Custom background support
+Custom backgrounds
 
-More text animation styles
+Text animation styles
 
 Multiple video resolutions
 
@@ -687,23 +728,31 @@ Google Play release
 
 📌 Project Status
 
-AyahFlow is currently an active portfolio project under development.
+QuranReels is an active portfolio project under development.
 
-The main application flow and UI have been implemented, while the video generation pipeline is still being refined for reliability, synchronization, performance, and production release.
+The main creation flow and UI are implemented. Current development is focused on making the video generation pipeline reliable, accurately synchronized, memory-efficient, and ready for production use.
 
-The project is intentionally being developed with production-oriented architecture and engineering practices rather than as a simple UI prototype.
+The project is being developed with production-oriented architecture and reusable components rather than as a simple UI prototype.
 
 👨‍💻 Author
+
+<div align="center">
 
 Karim Tamer
 
 Flutter Developer
 
-<p align="left">
-  <a href="https://github.com/KarimTamer74">
-    <img src="https://img.shields.io/badge/GitHub-KarimTamer74-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  </a>
-</p>
+<a href="https://github.com/KarimTamer74">
+  <img src="https://img.shields.io/badge/GitHub-KarimTamer74-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
+
+</div>
+
+<div align="center">
+
+🌙 Built with Flutter & ❤️ for Quran content creators
+
+</div>
 
 📄 License
 
