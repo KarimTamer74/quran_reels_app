@@ -29,65 +29,20 @@ Surah  →  Ayah Range  →  Reciter  →  Template  →  Preview  →  Generate
 ```
 
 ---
-
 ## ✨ Features
 
-<table>
-<tr>
-<td width="50%">
-
-### 📖 Quran Selection
-- Browse & search all 114 Surahs
-- Arabic & English names
-- Ayah range picker with live text preview
-
-</td>
-<td width="50%">
-
-### 🎙️ Reciters
-- 12 world-renowned reciters
-- Audio preview before generation
-- Powered by EveryAyah.com
-
-</td>
-</tr>
-<tr>
-<td>
-
-### 🎨 Templates
-- 8 built-in gradient templates
-- Custom image upload
-- Rename & delete personal templates
-
-</td>
-<td>
-
-### 🎬 Video Generation
-- On-device FFmpeg processing
-- Synchronized Arabic subtitles
-- Real-time progress tracking
-
-</td>
-</tr>
-<tr>
-<td>
-
-### 📱 Video Result
-- In-app playback with scrubbing
-- Save to gallery
-- Share to Instagram, WhatsApp, TikTok
-
-</td>
-<td>
-
-### 🌍 Experience
-- Arabic + English (RTL support)
-- Light & Dark theme
-- Responsive for phones & tablets
-
-</td>
-</tr>
-</table>
+| | Feature | Details |
+|---|---|---|
+| 📖 | **Surah & Ayah Selection** | Search all 114 Surahs, select any Ayah range with live text preview |
+| 🎙️ | **12 World Reciters** | Abdul Basit, Al-Afasy, As-Sudais, Al-Minshawi & more |
+| 🔊 | **Audio Preview** | Preview recitation before generating |
+| 🎨 | **8 Built-in Templates** | Gradient backgrounds (Emerald, Ocean, Sunset, Minimal...) |
+| 🖼️ | **Custom Templates** | Upload your own background image |
+| 🎬 | **On-Device Video Generation** | FFmpeg-powered, no internet needed after audio download |
+| 📝 | **Synchronized Subtitles** | Each Ayah appears exactly when the reciter reads it |
+| 💾 | **Save & Share** | Export to gallery or share directly to Instagram, WhatsApp, TikTok |
+| 🌍 | **Arabic + English** | Full RTL support with localized UI |
+| 🌓 | **Dark / Light Theme** | Persistent theme preference |
 
 ---
 
@@ -113,6 +68,13 @@ Surah  →  Ayah Range  →  Reciter  →  Template  →  Preview  →  Generate
   &nbsp;&nbsp;
   <img src="docs/screenshots/video_result.png" width="220">
 </div>
+
+---
+## 📱 User Flow
+
+```
+Surah Selector  →  Ayah Range  →  Reciter  →  Template  →  Preview  →  Generate  →  Share
+```
 
 ---
 
@@ -207,24 +169,49 @@ Export MP4  (720×1280 · H.264 · AAC · faststart)
 
 ---
 
-## 🗺 Roadmap
+## 🗺️ Roadmap
 
-**✅ Done**
-- Full creation flow (Surah → Ayah → Reciter → Template → Preview → Generate → Share)
-- FFmpeg on-device video generation with synchronized subtitles
-- Custom template upload, rename & delete
-- Arabic/English localization + RTL
-- Light/Dark theme with persistence
+### ✅ Implemented
 
-**🚧 In Progress**
-- Generation speed & memory optimization
-- Production testing across Android devices
+- [x] Surah selection
+- [x] Ayah range selection
+- [x] Reciter selection
+- [x] Reciter audio preview
+- [x] Suggested templates
+- [x] My Templates
+- [x] Template selection
+- [x] Template rename / delete
+- [x] Preview screen
+- [x] Video generation screen
+- [x] Video result screen
+- [x] Video playback
+- [x] Save to gallery
+- [x] Share generated video
+- [x] Arabic / English localization
+- [x] Light / Dark theme
+- [x] Responsive UI
+- [x] FFmpeg generation foundation
 
-**🔮 Planned**
-- Generation history & saved projects
-- More templates and reciters
-- Text animation styles
-- Google Play release
+### 🚧 In Progress
+
+- [ ] Finalize FFmpeg generation pipeline
+- [ ] Accurate Ayah / audio synchronization
+- [ ] Improve Arabic text wrapping
+- [ ] Optimize generation speed & memory usage
+- [ ] Improve generated video quality
+- [ ] Finalize custom template persistence
+- [ ] Production testing across Android devices
+
+### 🔮 Planned
+
+- [ ] More Quran templates
+- [ ] More reciters
+- [ ] Custom backgrounds
+- [ ] Text animation styles
+- [ ] Multiple video resolutions
+- [ ] Generation history
+- [ ] Favorites / saved projects
+- [ ] Google Play release
 
 ---
 
