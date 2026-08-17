@@ -236,11 +236,12 @@ Final 9:16 MP4 Video
 - [x] Video generation screen
 - [x] Video result screen
 - [x] Video playback
+- [x] Save to gallery
 
 </td>
 <td width="33%">
 
-- [x] Save to gallery
+
 - [x] Share generated video
 - [x] Arabic / English localization
 - [x] Light / Dark theme
@@ -266,11 +267,12 @@ Final 9:16 MP4 Video
 
 - [ ] Optimize generation speed & memory usage
 - [ ] Improve generated video quality
-- [ ] Finalize custom template persistence
+
 
 </td>
 <td width="33%">
 
+- [ ] Finalize custom template persistence
 - [ ] Production testing across Android devices
 
 </td>
@@ -292,11 +294,12 @@ Final 9:16 MP4 Video
 
 - [ ] Text animation styles
 - [ ] Multiple video resolutions
-- [ ] Generation history
+
 
 </td>
 <td width="33%">
 
+- [ ] Generation history
 - [ ] Favorites / saved projects
 - [ ] Google Play release
 
