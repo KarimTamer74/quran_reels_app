@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="docs/screenshots/app_icon.png" width="100" alt="QuranReels App Icon">
+<img src="docs/screenshots/app_icon.png" width="100" alt="Quran Cuts App Icon">
 
-# 🎬 QuranReels
+# 🎬 Quran Cuts
 
 ### Transform Quran recitations into cinematic vertical videos — ready to share.
 
@@ -50,11 +50,11 @@
 
 ---
 
-## What is QuranReels?
+## What is Quran Cuts?
 
-QuranReels is a Flutter application that lets users pick any Surah and Ayah range, choose from world-renowned reciters, select a visual template, and export a professional 9:16 vertical video — fully on-device, no backend required.
+Quran Cuts is a Flutter application that lets users pick any Surah and Ayah range, choose from world-renowned reciters, select a visual template, and export a professional 9:16 vertical video — fully on-device, no backend required.
 
-Built to solve a real problem: creating Quran recitation videos for social media is technically complex. QuranReels handles audio synchronization, Arabic text rendering, gradient backgrounds, and FFmpeg composition in a clean, guided flow.
+Built to solve a real problem: creating Quran recitation videos for social media is technically complex. Quran Cuts handles audio synchronization, Arabic text rendering, gradient backgrounds, and FFmpeg composition in a clean, guided flow.
 
 ## 📱 User Flow
 ```
@@ -187,7 +187,7 @@ lib/
 
 ## 🎬 Video Generation Pipeline
 
-QuranReels uses **FFmpeg** to process the selected recitations, Quran text, and visual template into a vertical MP4 video.
+Quran Cuts uses **FFmpeg** to process the selected recitations, Quran text, and visual template into a vertical MP4 video.
 
 ```text
 Selected Ayahs
