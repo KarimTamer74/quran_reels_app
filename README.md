@@ -81,25 +81,76 @@ Surah  →  Ayah Range  →  Reciter  →  Template  →  Preview  →  Generate
 
 ## 📸 Screenshots
 
-### Surah & Ayah Selection
+### 🚀 Splash
+
 <div align="center">
-  <img src="docs/screenshots/surah_selection.png" width="220">
-  &nbsp;&nbsp;
-  <img src="docs/screenshots/ayah_range.png" width="220">
+  <img src="docs/screenshots/splash.png" width="220">
 </div>
 
-### Reciter & Template
+### 🏠 Home
+
 <div align="center">
-  <img src="docs/screenshots/reciter_selection.png" width="220">
+  <img src="docs/screenshots/home_light.png" width="220" alt="Home Light">
   &nbsp;&nbsp;
-  <img src="docs/screenshots/suggested_templates.png" width="220">
+  <img src="docs/screenshots/home_dark.png" width="220" alt="Home Dark">
 </div>
 
-### Preview & Result
+### 📖 Surah Selection
+
 <div align="center">
-  <img src="docs/screenshots/preview.png" width="220">
+  <img src="docs/screenshots/surah_light.png" width="220" alt="Surah Selection Light">
   &nbsp;&nbsp;
-  <img src="docs/screenshots/video_result.png" width="220">
+  <img src="docs/screenshots/surah_dark.png" width="220" alt="Surah Selection Dark">
+</div>
+
+### 🔢 Ayah Range
+
+<div align="center">
+  <img src="docs/screenshots/ayah_light.png" width="220" alt="Ayah Range Light">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/ayah_dark.png" width="220" alt="Ayah Range Dark">
+</div>
+
+### 🎙️ Reciter Selection
+
+<div align="center">
+  <img src="docs/screenshots/reciter_light.png" width="220" alt="Reciter Selection Light">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/reciter_dark.png" width="220" alt="Reciter Selection Dark">
+</div>
+
+### 🎨 Templates
+
+<div align="center">
+  <img src="docs/screenshots/template-light.png" width="220" alt="Template Light">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/template1_dark.png" width="220" alt="Template Dark">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/template2_dark.png" width="220" alt="My Templates">
+</div>
+
+### 👁️ Preview
+
+<div align="center">
+  <img src="docs/screenshots/preview_light.png" width="220" alt="Preview Light">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/preview_dark.png" width="220" alt="Preview Dark">
+</div>
+
+### ⚙️ Video Generation
+
+<div align="center">
+  <img src="docs/screenshots/generation1_light.png" width="220" alt="Generation Light">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/generation_dark.png" width="220" alt="Generation Dark">
+</div>
+
+### 🎬 Reel Done
+
+<div align="center">
+  <img src="docs/screenshots/done_light.png" width="220" alt="Reel Done Light">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/done_dark.png" width="220" alt="Reel Done Dark">
 </div>
 
 ---
